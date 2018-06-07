@@ -13,7 +13,7 @@ import java.util.UUID;
 
 @ApplicationScoped
 @Path("/hello")
-@KafkaConfig(bootstrapServers = "#{KAFKA_SERVICE_HOST}:#{KAFKA_SERVICE_PORT}")
+@KafkaConfig(bootstrapServers = "#{MY_CLUSTER_KAFKA_SERVICE_HOST}:#{MY_CLUSTER_KAFKA_SERVICE_PORT}")
 public class HelloWorldEndpoint {
 
 	@Producer
