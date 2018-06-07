@@ -1,4 +1,4 @@
-package de.jugh.kafka.producer.rest;
+package de.jughh.kafka.producer.rest;
 
 import org.aerogear.kafka.SimpleKafkaProducer;
 import org.aerogear.kafka.cdi.annotation.KafkaConfig;
@@ -9,6 +9,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
+
+import java.util.Random;
 import java.util.UUID;
 
 @ApplicationScoped
@@ -17,18 +19,18 @@ import java.util.UUID;
 public class HelloWorldEndpoint {
 
 	@Producer
-	private SimpleKafkaProducer<String, Person> myproducer;
+	private SimpleKafkaProducer<String, SensorData> myproducer;
 
 	@GET
 	@Produces("text/plain")
 	public Response doGet() {
 
-		final Person p = new Person();
-		p.setName("Seppel");
+		final Random random = new Random();
 
+		final SensorData data = new SensorData(UUID.randomUUID().toString(), (random.nextInt(1000)+""));
 
-		myproducer.send("jug_hessen", UUID.randomUUID().toString(), p);
+		myproducer.send("sensor_data", data);
 
-		return Response.ok("Hello from WildFly Swarm!").build();
+		return Response.ok("Hello from Thorntail!").build();
 	}
 }
