@@ -1,0 +1,30 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+#Build targets
+target/
+/target
+*/target
+
+#Maven release files
+*.releaseBackup
+release.properties
+
+.idea/
+*.class
+*.iml
+.classpath
+.project
+.settings/
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+.vscode
