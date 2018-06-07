@@ -90,7 +90,7 @@
     <dependency>
       <groupId>org.aerogear.kafka</groupId>
       <artifactId>kafka-cdi-extension</artifactId>
-      <version>0.0.10</version>
+      <version>0.1.0</version>
     </dependency>
 
   </dependencies>
